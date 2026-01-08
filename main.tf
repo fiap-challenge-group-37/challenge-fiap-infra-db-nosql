@@ -28,3 +28,23 @@ resource "aws_dynamodb_table" "pedidos" {
 
   tags = local.common_tags
 }
+
+# Criação da Tabela DynamoDB para Pagamentos
+resource "aws_dynamodb_table" "pagamentos" {
+  # Nome da tabela (ex: fiap-g52-tc3-pagamentos)
+  name           = "${var.resource_prefix}-pagamentos"
+
+  # Cobrança sob demanda (Perfeito para Lab/Testes - Grátis se não usar muito)
+  billing_mode   = "PAY_PER_REQUEST"
+
+  # Chave Primária (ID do Pagamento)
+  hash_key       = "id"
+
+  # Definição do atributo da chave
+  attribute {
+    name = "id"
+    type = "S" # S = String, N = Number
+  }
+
+  tags = local.common_tags
+}

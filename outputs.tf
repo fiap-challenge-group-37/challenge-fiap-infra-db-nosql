@@ -1,24 +1,14 @@
-output "docdb_endpoint" {
-  description = "Endpoint do cluster DocumentDB"
-  value       = aws_docdb_cluster.main.endpoint
+output "dynamodb_table_name" {
+  description = "Nome da tabela criada no DynamoDB"
+  value       = aws_dynamodb_table.pedidos.name
 }
 
-output "docdb_reader_endpoint" {
-  description = "Endpoint de leitura do cluster DocumentDB"
-  value       = aws_docdb_cluster.main.reader_endpoint
+output "dynamodb_table_arn" {
+  description = "ARN da tabela (Identificador único na AWS)"
+  value       = aws_dynamodb_table.pedidos.arn
 }
 
-output "docdb_port" {
-  description = "Porta do cluster DocumentDB"
-  value       = aws_docdb_cluster.main.port
-}
-
-output "docdb_username" {
-  description = "Username do cluster DocumentDB"
-  value       = var.docdb_username
-}
-
-output "docdb_cluster_identifier" {
-  description = "Identificador do cluster DocumentDB"
-  value       = aws_docdb_cluster.main.cluster_identifier
+output "aws_region" {
+  description = "Região onde a tabela foi criada"
+  value       = var.aws_region
 }

@@ -23,7 +23,7 @@ Este repositorio provisiona um cluster Amazon DocumentDB (compativel com MongoDB
 
 - Terraform >= 1.5
 - AWS CLI configurado
-- Bucket S3 `bucket-s3-g37-tc3` existente (para backend)
+- Bucket S3 `bucket-s3-g37-tc4` existente (para backend)
 - Infraestrutura Kubernetes provisionada ([challenge-fiap-infra-k8s](https://github.com/fiap-challenge-group-52/challenge-fiap-infra-k8s))
 
 ## Estrutura do Repositorio

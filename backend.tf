@@ -7,7 +7,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket       = "bucket-s3-g37-tc3"
+    bucket       = "bucket-s3-g37-tc4"
     key          = "fiap/db-nosql/terraform.tfstate"
     region       = "us-east-1"
     use_lockfile = true

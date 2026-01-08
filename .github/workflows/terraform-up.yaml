@@ -7,8 +7,8 @@ on:
       - main
 
 jobs:
-  create_docdb:
-    name: Create DocumentDB with Terraform
+  create_dynamodb: # Mudei o nome do job para ficar semanticamente correto (opcional)
+    name: Create DynamoDB with Terraform
     runs-on: ubuntu-latest
 
     steps:
@@ -34,10 +34,7 @@ jobs:
 
       - name: Terraform Plan
         id: plan
-        run: |
-          terraform plan -out=tfplan -no-color \
-            -var="docdb_username=${{ secrets.DOCDB_USERNAME }}" \
-            -var="docdb_password=${{ secrets.DOCDB_PASSWORD }}"
+        run: terraform plan -out=tfplan -no-color
 
       - name: Terraform Apply
         run: terraform apply -input=false -auto-approve tfplan

@@ -15,7 +15,7 @@ output "docdb_port" {
 
 output "docdb_username" {
   description = "Username do cluster DocumentDB"
-  value       = var.db_username
+  value       = var.docdb_username
 }
 
 output "docdb_cluster_identifier" {

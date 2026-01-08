@@ -64,12 +64,12 @@ variable "db_port" {
   }
 }
 
-variable "db_username" {
+variable "docdb_username" {
   type        = string
   description = "Master username for the DocumentDB cluster"
 }
 
-variable "db_password" {
+variable "docdb_password" {
   type        = string
   description = "Master password for the DocumentDB cluster"
   sensitive   = true

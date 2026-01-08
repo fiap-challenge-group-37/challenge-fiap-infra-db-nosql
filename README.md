@@ -46,17 +46,17 @@ Este repositorio provisiona um cluster Amazon DocumentDB (compativel com MongoDB
 
 ## Variaveis
 
-| Variavel | Descricao | Padrao |
-|----------|-----------|--------|
-| `aws_region` | Regiao AWS | `us-east-1` |
-| `resource_prefix` | Prefixo dos recursos | `fiap-g52-tc3` |
-| `db_instance_class` | Classe da instancia | `db.t3.medium` |
-| `db_instance_count` | Numero de instancias | `1` |
+| Variavel                     | Descricao | Padrao |
+|------------------------------|-----------|--------|
+| `aws_region`                 | Regiao AWS | `us-east-1` |
+| `resource_prefix`            | Prefixo dos recursos | `fiap-g52-tc3` |
+| `db_instance_class`          | Classe da instancia | `db.t3.medium` |
+| `db_instance_count`          | Numero de instancias | `1` |
 | `db_backup_retention_period` | Dias de retencao de backup | `7` |
-| `db_port` | Porta do banco | `27017` |
-| `db_username` | Usuario master | (obrigatorio) |
-| `db_password` | Senha master | (obrigatorio) |
-| `db_tls_enabled` | Habilitar TLS | `false` |
+| `db_port`                    | Porta do banco | `27017` |
+| `docdb_username`             | Usuario master | (obrigatorio) |
+| `docdb_password`             | Senha master | (obrigatorio) |
+| `db_tls_enabled`             | Habilitar TLS | `false` |
 
 ## Uso Local
 
@@ -68,10 +68,10 @@ terraform init
 terraform validate
 
 # Planejar alteracoes
-terraform plan -var="db_username=admin" -var="db_password=sua_senha_segura"
+terraform plan -var="db_username=admin" -var="docdb_password=sua_senha_segura"
 
 # Aplicar alteracoes
-terraform apply -var="db_username=admin" -var="db_password=sua_senha_segura"
+terraform apply -var="db_username=admin" -var="docdb_password=sua_senha_segura"
 ```
 
 ## CI/CD

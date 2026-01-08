@@ -36,8 +36,8 @@ jobs:
         id: plan
         run: |
           terraform plan -out=tfplan -no-color \
-            -var="db_username=${{ secrets.DB_USERNAME }}" \
-            -var="db_password=${{ secrets.DB_PASSWORD }}"
+            -var="docdb_username=${{ secrets.DOCDB_USERNAME }}" \
+            -var="docdb_password=${{ secrets.DOCDB_PASSWORD }}"
 
       - name: Terraform Apply
         run: terraform apply -input=false -auto-approve tfplan

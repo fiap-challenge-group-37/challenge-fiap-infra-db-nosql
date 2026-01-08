@@ -54,8 +54,8 @@ resource "aws_docdb_cluster_parameter_group" "main" {
 resource "aws_docdb_cluster" "main" {
   cluster_identifier              = local.cluster_identifier
   engine                          = "docdb"
-  master_username                 = var.db_username
-  master_password                 = var.db_password
+  master_username                 = var.docdb_username
+  master_password                 = var.docdb_password
   port                            = var.db_port
   db_subnet_group_name            = aws_docdb_subnet_group.main.name
   vpc_security_group_ids          = [aws_security_group.docdb_sg.id]
